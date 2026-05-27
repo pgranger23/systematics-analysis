@@ -1,0 +1,40 @@
+# ROOT files (data files, can be extremely large)
+*.root
+
+# Parquet files (cached tables)
+parquet/
+
+# Compiled C++ macro objects and dictionaries (from ROOT ACLiC compilation)
+*.so
+*.d
+*.pcm
+*_tmp_*
+*_ACLiC_dict*
+
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Generated plots
+plots/
+syst_plots_1d/
+systematic_plots/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+venv/
+env/
+.conda/
+.mypy_cache/
+.pytest_cache/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log

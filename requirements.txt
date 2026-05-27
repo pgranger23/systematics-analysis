@@ -1,0 +1,19 @@
+# Core Data Processing & Analysis
+numpy>=2.0.0
+pandas>=2.0.0
+polars>=1.0.0
+awkward>=2.0.0
+uproot>=5.0.0
+scipy>=1.10.0
+
+# Plotting & Visualization
+matplotlib>=3.5.0
+
+# Utilities
+tqdm>=4.60.0
+pyyaml>=6.0.0
+particle>=0.23.0
+
+# Jupyter Environment
+ipykernel>=6.0.0
+ipywidgets>=8.0.0

@@ -1,0 +1,1521 @@
+generated_systematic_provider_configuration: {
+    BeRPAWeight_DUNE_TDR_FakeData: {
+        BeRPA_A: {
+            centralParamValue: 0
+            isSplineable: true
+            paramVariations: [
+                -3,
+                -2,
+                -1,
+                0,
+                1,
+                2,
+                3
+            ]
+            prettyName: BeRPA_A
+            systParamId: 73
+        }
+        BeRPA_B: {
+            centralParamValue: 0
+            isSplineable: true
+            paramVariations: [
+                -3,
+                -2,
+                -1,
+                0,
+                1,
+                2,
+                3
+            ]
+            prettyName: BeRPA_B
+            systParamId: 74
+        }
+        BeRPA_D: {
+            centralParamValue: 0
+            isSplineable: true
+            paramVariations: [
+                -3,
+                -2,
+                -1,
+                0,
+                1,
+                2,
+                3
+            ]
+            prettyName: BeRPA_D
+            systParamId: 75
+        }
+        BeRPA_E: {
+            centralParamValue: 0
+            isSplineable: true
+            paramVariations: [
+                -3,
+                -2,
+                -1,
+                0,
+                1,
+                2,
+                3
+            ]
+            prettyName: BeRPA_E
+            systParamId: 76
+        }
+        instance_name: DUNE_TDR_FakeData
+        parameter_headers: [
+            BeRPA_A,
+            BeRPA_B,
+            BeRPA_D,
+            BeRPA_E
+        ]
+        tool_options: {
+            ApplyCV: true
+            fill_valid_tree: false
+            ignore_parameter_dependence: true
+        }
+        tool_type: BeRPAWeight
+    }
+    EbLepMomShift_DUNE_TDR_FakeData: {
+        EbFSLepMomShift: {
+            centralParamValue: 1
+            isWeightSystematicVariation: false
+            paramVariations: [
+                0,
+                0,
+                0,
+                1,
+                0,
+                0,
+                0
+            ]
+            prettyName: EbFSLepMomShift
+            systParamId: 77
+        }
+        instance_name: DUNE_TDR_FakeData
+        parameter_headers: [
+            EbFSLepMomShift
+        ]
+        tool_options: {
+            EbLepMomShift_Template_input_manifest: {
+                input_file: "/cvmfs/dune.osgstorage.org/pnfs/fnal.gov/usr/dune/persistent/stash/nusyst_inputs/V00_02/EbLepMomShift/EbInputs.root"
+                inputs: [
+                    { 
+                      input_hist: "22.1MeVEnu_ctheta_p_pyx_difffromnom"
+                      value: 1
+                    }
+                ]
+            }
+            fill_valid_tree: false
+        }
+        tool_type: EbLepMomShift
+    }
+    FSILikeEAvailSmearing_DUNE_TDR_FakeData: {
+        FSILikeEAvailSmearing: {
+            centralParamValue: 0
+            paramVariations: [
+                1,
+                1,
+                1,
+                0,
+                1,
+                1,
+                1
+            ]
+            prettyName: FSILikeEAvailSmearing
+            systParamId: 83
+        }
+        instance_name: DUNE_TDR_FakeData
+        parameter_headers: [
+            FSILikeEAvailSmearing
+        ]
+        tool_options: {
+            FSILikeEAvailSmearing_input_manifest: {
+                CCDIS: {
+                    input_file: "/cvmfs/dune.osgstorage.org/pnfs/fnal.gov/usr/dune/persistent/stash/nusyst_inputs/V00_02/FSILikeEAvailShift/nu_MpiDIS.root"
+                    inputs: [
+                        { 
+                          input_hist: WeightPlot
+                          value: 1
+                        }
+                    ]
+                }
+                CCDIS_bar: {
+                    input_file: "/cvmfs/dune.osgstorage.org/pnfs/fnal.gov/usr/dune/persistent/stash/nusyst_inputs/V00_02/FSILikeEAvailShift/nubar_MpiDIS.root"
+                    inputs: [
+                        { 
+                          input_hist: WeightPlot
+                          value: 1
+                        }
+                    ]
+                }
+                CCMEC: {
+                    input_file: "/cvmfs/dune.osgstorage.org/pnfs/fnal.gov/usr/dune/persistent/stash/nusyst_inputs/V00_02/FSILikeEAvailShift/nu_2p2h.root"
+                    inputs: [
+                        { 
+                          input_hist: WeightPlot
+                          value: 1
+                        }
+                    ]
+                }
+                CCMEC_bar: {
+                    input_file: "/cvmfs/dune.osgstorage.org/pnfs/fnal.gov/usr/dune/persistent/stash/nusyst_inputs/V00_02/FSILikeEAvailShift/nubar_2p2h.root"
+                    inputs: [
+                        { 
+                          input_hist: WeightPlot
+                          value: 1
+                        }
+                    ]
+                }
+                CCQE: {
+                    input_file: "/cvmfs/dune.osgstorage.org/pnfs/fnal.gov/usr/dune/persistent/stash/nusyst_inputs/V00_02/FSILikeEAvailShift/nu_CCQE.root"
+                    inputs: [
+                        { 
+                          input_hist: WeightPlot
+                          value: 1
+                        }
+                    ]
+                }
+                CCQE_bar: {
+                    input_file: "/cvmfs/dune.osgstorage.org/pnfs/fnal.gov/usr/dune/persistent/stash/nusyst_inputs/V00_02/FSILikeEAvailShift/nubar_CCQE.root"
+                    inputs: [
+                        { 
+                          input_hist: WeightPlot
+                          value: 1
+                        }
+                    ]
+                }
+                CCRes: {
+                    input_file: "/cvmfs/dune.osgstorage.org/pnfs/fnal.gov/usr/dune/persistent/stash/nusyst_inputs/V00_02/FSILikeEAvailShift/nu_1pi.root"
+                    inputs: [
+                        { 
+                          input_hist: WeightPlot
+                          value: 1
+                        }
+                    ]
+                }
+                CCRes_bar: {
+                    input_file: "/cvmfs/dune.osgstorage.org/pnfs/fnal.gov/usr/dune/persistent/stash/nusyst_inputs/V00_02/FSILikeEAvailShift/nubar_1pi.root"
+                    inputs: [
+                        { 
+                          input_hist: WeightPlot
+                          value: 1
+                        }
+                    ]
+                }
+            }
+            LimitWeights: [
+                0,
+                2
+            ]
+        }
+        tool_type: FSILikeEAvailSmearing
+    }
+    GENIEReWeight_DUNE_v2: {
+      AhtBY: {
+         centralParamValue: 0
+         paramVariations: [
+            -3,
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            3
+         ]
+         prettyName: "AhtBY"
+         systParamId: 30
+      }
+      BhtBY: {
+         centralParamValue: 0
+         paramVariations: [
+            -3,
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            3
+         ]
+         prettyName: "BhtBY"
+         systParamId: 31
+      }
+      CV1uBY: {
+         centralParamValue: 0
+         paramVariations: [
+            -3,
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            3
+         ]
+         prettyName: "CV1uBY"
+         systParamId: 32
+      }
+      CV2uBY: {
+         centralParamValue: 0
+         paramVariations: [
+            -3,
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            3
+         ]
+         prettyName: "CV2uBY"
+         systParamId: 33
+      }
+      EtaNCEL: {
+         centralParamValue: 0
+         paramVariations: [
+            -3,
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            3
+         ]
+         prettyName: "EtaNCEL"
+         systParamId: 6
+      }
+      FrAbs_N: {
+         centralParamValue: 0
+         paramVariations: [
+            -3,
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            3
+         ]
+         prettyName: "FrAbs_N"
+         systParamId: 42
+      }
+      FrAbs_pi: {
+         centralParamValue: 0
+         paramVariations: [
+            -3,
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            3
+         ]
+         prettyName: "FrAbs_pi"
+         systParamId: 37
+      }
+      FrCEx_N: {
+         centralParamValue: 0
+         paramVariations: [
+            -3,
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            3
+         ]
+         prettyName: "FrCEx_N"
+         systParamId: 40
+      }
+      FrCEx_pi: {
+         centralParamValue: 0
+         paramVariations: [
+            -3,
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            3
+         ]
+         prettyName: "FrCEx_pi"
+         systParamId: 35
+      }
+      FrInel_N: {
+         centralParamValue: 0
+         paramVariations: [
+            -3,
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            3
+         ]
+         prettyName: "FrInel_N"
+         systParamId: 41
+      }
+      FrInel_pi: {
+         centralParamValue: 0
+         paramVariations: [
+            -3,
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            3
+         ]
+         prettyName: "FrInel_pi"
+         systParamId: 36
+      }
+      FrPiProd_N: {
+         centralParamValue: 0
+         paramVariations: [
+            -3,
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            3
+         ]
+         prettyName: "FrPiProd_N"
+         systParamId: 43
+      }
+      FrPiProd_pi: {
+         centralParamValue: 0
+         paramVariations: [
+            -3,
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            3
+         ]
+         prettyName: "FrPiProd_pi"
+         systParamId: 38
+      }
+      MFP_N: {
+         centralParamValue: 0
+         paramVariations: [
+            -3,
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            3
+         ]
+         prettyName: "MFP_N"
+         systParamId: 39
+      }
+      MFP_pi: {
+         centralParamValue: 0
+         paramVariations: [
+            -3,
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            3
+         ]
+         prettyName: "MFP_pi"
+         systParamId: 34
+      }
+      MaCCRES: {
+         centralParamValue: 0
+         paramVariations: [
+            -3,
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            3
+         ]
+         prettyName: "MaCCRES"
+         systParamId: 7
+      }
+      MaNCEL: {
+         centralParamValue: 0
+         paramVariations: [
+            -3,
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            3
+         ]
+         prettyName: "MaNCEL"
+         systParamId: 5
+      }
+      MaNCRES: {
+         centralParamValue: 0
+         paramVariations: [
+            -3,
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            3
+         ]
+         prettyName: "MaNCRES"
+         systParamId: 9
+      }
+      MvCCRES: {
+         centralParamValue: 0
+         paramVariations: [
+            -3,
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            3
+         ]
+         prettyName: "MvCCRES"
+         systParamId: 8
+      }
+      MvNCRES: {
+         centralParamValue: 0
+         paramVariations: [
+            -3,
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            3
+         ]
+         prettyName: "MvNCRES"
+         systParamId: 10
+      }
+      NonRESBGvbarnCC1pi: {
+         centralParamValue: 0
+         paramVariations: [
+            -3,
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            3
+         ]
+         prettyName: "NonRESBGvbarnCC1pi"
+         systParamId: 23
+      }
+      NonRESBGvbarnCC2pi: {
+         centralParamValue: 0
+         paramVariations: [
+            -3,
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            3
+         ]
+         prettyName: "NonRESBGvbarnCC2pi"
+         systParamId: 24
+      }
+      NonRESBGvbarnNC1pi: {
+         centralParamValue: 0
+         paramVariations: [
+            -3,
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            3
+         ]
+         prettyName: "NonRESBGvbarnNC1pi"
+         systParamId: 25
+      }
+      NonRESBGvbarnNC2pi: {
+         centralParamValue: 0
+         paramVariations: [
+            -3,
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            3
+         ]
+         prettyName: "NonRESBGvbarnNC2pi"
+         systParamId: 26
+      }
+      NonRESBGvbarpCC1pi: {
+         centralParamValue: 0
+         paramVariations: [
+            -3,
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            3
+         ]
+         prettyName: "NonRESBGvbarpCC1pi"
+         systParamId: 19
+      }
+      NonRESBGvbarpCC2pi: {
+         centralParamValue: 0
+         paramVariations: [
+            -3,
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            3
+         ]
+         prettyName: "NonRESBGvbarpCC2pi"
+         systParamId: 20
+      }
+      NonRESBGvbarpNC1pi: {
+         centralParamValue: 0
+         paramVariations: [
+            -3,
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            3
+         ]
+         prettyName: "NonRESBGvbarpNC1pi"
+         systParamId: 21
+      }
+      NonRESBGvbarpNC2pi: {
+         centralParamValue: 0
+         paramVariations: [
+            -3,
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            3
+         ]
+         prettyName: "NonRESBGvbarpNC2pi"
+         systParamId: 22
+      }
+      NonRESBGvnCC1pi: {
+         centralParamValue: 0
+         paramVariations: [
+            -3,
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            3
+         ]
+         prettyName: "NonRESBGvnCC1pi"
+         systParamId: 15
+      }
+      NonRESBGvnCC2pi: {
+         centralParamValue: 0
+         paramVariations: [
+            -3,
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            3
+         ]
+         prettyName: "NonRESBGvnCC2pi"
+         systParamId: 16
+      }
+      NonRESBGvnNC1pi: {
+         centralParamValue: 0
+         paramVariations: [
+            -3,
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            3
+         ]
+         prettyName: "NonRESBGvnNC1pi"
+         systParamId: 17
+      }
+      NonRESBGvnNC2pi: {
+         centralParamValue: 0
+         paramVariations: [
+            -3,
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            3
+         ]
+         prettyName: "NonRESBGvnNC2pi"
+         systParamId: 18
+      }
+      NonRESBGvpCC1pi: {
+         centralParamValue: 0
+         paramVariations: [
+            -3,
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            3
+         ]
+         prettyName: "NonRESBGvpCC1pi"
+         systParamId: 11
+      }
+      NonRESBGvpCC2pi: {
+         centralParamValue: 0
+         paramVariations: [
+            -3,
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            3
+         ]
+         prettyName: "NonRESBGvpCC2pi"
+         systParamId: 12
+      }
+      NonRESBGvpNC1pi: {
+         centralParamValue: 0
+         paramVariations: [
+            -3,
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            3
+         ]
+         prettyName: "NonRESBGvpNC1pi"
+         systParamId: 13
+      }
+      NonRESBGvpNC2pi: {
+         centralParamValue: 0
+         paramVariations: [
+            -3,
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            3
+         ]
+         prettyName: "NonRESBGvpNC2pi"
+         systParamId: 14
+      }
+      RDecBR1eta: {
+         centralParamValue: 0
+         paramVariations: [
+            -3,
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            3
+         ]
+         prettyName: "RDecBR1eta"
+         systParamId: 28
+      }
+      RDecBR1gamma: {
+         centralParamValue: 0
+         paramVariations: [
+            -3,
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            3
+         ]
+         prettyName: "RDecBR1gamma"
+         systParamId: 27
+      }
+      Theta_Delta2Npi: {
+         centralParamValue: 1
+         isCorrection: true
+         prettyName: "Theta_Delta2Npi"
+         systParamId: 44
+      }
+      VecFFCCQEshape: {
+         centralParamValue: 1
+         isCorrection: true
+         prettyName: "VecFFCCQEshape"
+         systParamId: 4
+      }
+      ZExpA1CCQE: {
+         centralParamValue: 0
+         paramVariations: [
+            -3,
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            3
+         ]
+         prettyName: "ZExpA1CCQE"
+         systParamId: 0
+      }
+      ZExpA2CCQE: {
+         centralParamValue: 0
+         paramVariations: [
+            -3,
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            3
+         ]
+         prettyName: "ZExpA2CCQE"
+         systParamId: 1
+      }
+      ZExpA3CCQE: {
+         centralParamValue: 0
+         paramVariations: [
+            -3,
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            3
+         ]
+         prettyName: "ZExpA3CCQE"
+         systParamId: 2
+      }
+      ZExpA4CCQE: {
+         centralParamValue: 0
+         paramVariations: [
+            -3,
+            -2,
+            -1,
+            0,
+            1,
+            2,
+            3
+         ]
+         prettyName: "ZExpA4CCQE"
+         systParamId: 3
+      }
+      instance_name: "ICARUS_v2_multisigma"
+      parameter_headers: [
+         "ZExpA1CCQE",
+         "ZExpA2CCQE",
+         "ZExpA3CCQE",
+         "ZExpA4CCQE",
+         "VecFFCCQEshape",
+         "MaNCEL",
+         "EtaNCEL",
+         "MaCCRES",
+         "MvCCRES",
+         "MaNCRES",
+         "MvNCRES",
+         "NonRESBGvpCC1pi",
+         "NonRESBGvpCC2pi",
+         "NonRESBGvpNC1pi",
+         "NonRESBGvpNC2pi",
+         "NonRESBGvnCC1pi",
+         "NonRESBGvnCC2pi",
+         "NonRESBGvnNC1pi",
+         "NonRESBGvnNC2pi",
+         "NonRESBGvbarpCC1pi",
+         "NonRESBGvbarpCC2pi",
+         "NonRESBGvbarpNC1pi",
+         "NonRESBGvbarpNC2pi",
+         "NonRESBGvbarnCC1pi",
+         "NonRESBGvbarnCC2pi",
+         "NonRESBGvbarnNC1pi",
+         "NonRESBGvbarnNC2pi",
+         "RDecBR1gamma",
+         "RDecBR1eta",
+         "Theta_Delta2Npi",
+         "AhtBY",
+         "BhtBY",
+         "CV1uBY",
+         "CV2uBY",
+         "MFP_pi",
+         "FrCEx_pi",
+         "FrInel_pi",
+         "FrAbs_pi",
+         "FrPiProd_pi",
+         "MFP_N",
+         "FrCEx_N",
+         "FrInel_N",
+         "FrAbs_N",
+         "FrPiProd_N"
+      ]
+      tool_options: {
+         AxFFCCQEDipoleToZExp: true
+         CCRESIsShapeOnly: false
+         DISBYIsShapeOnly: false
+         MaCCQEIsShapeOnly: false
+         NCRESIsShapeOnly: false
+         UseFullHERG: true
+         evgen_list_name: ""
+         fill_valid_tree: false
+         genie_tune_name: "${GENIE_XSEC_TUNE}"
+         ignore_parameter_dependence: true
+      }
+      tool_type: "GENIEReWeight"
+   }
+
+    zexpansion_weighter_toolconfig: {
+        b1: {
+            isSplineable: true
+            paramVariations: [
+                -3,
+                -2,
+                -1,
+                0,
+                1,
+                2,
+                3
+            ]
+            prettyName: b1
+            systParamId: 84
+        }
+        b2: {
+            isSplineable: true
+            paramVariations: [
+                -3,
+                -2,
+                -1,
+                0,
+                1,
+                2,
+                3
+            ]
+            prettyName: b2
+            systParamId: 85
+        }
+        b3: {
+            isSplineable: true
+            paramVariations: [
+                -3,
+                -2,
+                -1,
+                0,
+                1,
+                2,
+                3
+            ]
+            prettyName: b3
+            systParamId: 86
+        }
+        b4: {
+            isSplineable: true
+            paramVariations: [
+                -3,
+                -2,
+                -1,
+                0,
+                1,
+                2,
+                3
+            ]
+            prettyName: b4
+            systParamId: 87
+        }
+        instance_name: zexpansion_weighter_toolconfig
+        parameter_headers: [
+            b1,
+            b2,
+            b3,
+            b4
+        ]
+        tool_options: {
+            verbosity_level: 0
+        }
+        tool_type: ZExpPCAWeighter
+    }
+
+    MINERvAE2p2h_DUNE_TDR_FakeData: {
+        E2p2h_A_nu: {
+            centralParamValue: 0
+            paramVariations: [
+                -1,
+                -0.5,
+                0,
+                0.5,
+                1
+            ]
+            prettyName: E2p2h_A_nu
+            systParamId: 46
+        }
+        E2p2h_A_nubar: {
+            centralParamValue: 0
+            paramVariations: [
+                -1,
+                -0.5,
+                0,
+                0.5,
+                1
+            ]
+            prettyName: E2p2h_A_nubar
+            systParamId: 48
+        }
+        E2p2h_B_nu: {
+            centralParamValue: 0
+            paramVariations: [
+                -1,
+                -0.5,
+                0,
+                0.5,
+                1
+            ]
+            prettyName: E2p2h_B_nu
+            systParamId: 47
+        }
+        E2p2h_B_nubar: {
+            centralParamValue: 0
+            paramVariations: [
+                -1,
+                -0.5,
+                0,
+                0.5,
+                1
+            ]
+            prettyName: E2p2h_B_nubar
+            systParamId: 49
+        }
+        instance_name: DUNE_TDR_FakeData
+        parameter_headers: [
+            E2p2h_A_nu,
+            E2p2h_B_nu,
+            E2p2h_A_nubar,
+            E2p2h_B_nubar
+        ]
+        tool_options: {
+            LimitWeights: [
+                0.1,
+                10
+            ]
+            fill_valid_tree: false
+            ignore_parameter_dependence: true
+        }
+        tool_type: MINERvAE2p2h
+    }
+    MINERvAq0q3Weighting_DUNE_TDR_FakeData: {
+        Mnv2p2hGaussEnhancement: {
+            centralParamValue: 1
+            paramVariations: [
+                4,
+                4,
+                4,
+                1,
+                2,
+                2,
+                2
+            ]
+            prettyName: Mnv2p2hGaussEnhancement
+            systParamId: 29
+        }
+        instance_name: DUNE_TDR_FakeData
+        parameter_headers: [
+            Mnv2p2hGaussEnhancement
+        ]
+        tool_options: {
+            Mnv2p2hGaussEnhancement_LimitWeights: [
+                0,
+                5
+            ]
+            fill_valid_tree: false
+            parameter_per_2p2h_universe: false
+        }
+        tool_type: MINERvAq0q3Weighting
+    }
+    MKSinglePiTemplate_DUNE_TDR_FakeData: {
+        MKSPP_ReWeight: {
+            centralParamValue: 0
+            paramVariations: [
+                1,
+                1,
+                1,
+                0,
+                1,
+                1,
+                1
+            ]
+            prettyName: MKSPP_ReWeight
+            systParamId: 45
+        }
+        instance_name: DUNE_TDR_FakeData
+        parameter_headers: [
+            MKSPP_ReWeight
+        ]
+        tool_options: {
+            MKSPP_Template_input_manifest: {
+                NumuNPiPlus: {
+                    e_uniform: [
+                        3,
+                        0.5,
+                        3.5
+                    ]
+                    input_file_pattern: "/cvmfs/dune.osgstorage.org/pnfs/fnal.gov/usr/dune/persistent/stash/nusyst_inputs/V00_02/MKInputs/MKOverGENIERSRes_%EGeV.root"
+                    input_hist_pattern: CC_1pip_1n_WQ2_Minoo_RS
+                    param_values: [
+                        1
+                    ]
+                }
+                NumuPPi0: {
+                    e_uniform: [
+                        3,
+                        0.5,
+                        3.5
+                    ]
+                    input_file_pattern: "/cvmfs/dune.osgstorage.org/pnfs/fnal.gov/usr/dune/persistent/stash/nusyst_inputs/V00_02/MKInputs/MKOverGENIERSRes_%EGeV.root"
+                    input_hist_pattern: CC_1pi0_WQ2_Minoo_RS
+                    param_values: [
+                        1
+                    ]
+                }
+                NumuPPiPlus: {
+                    e_uniform: [
+                        3,
+                        0.5,
+                        3.5
+                    ]
+                    input_file_pattern: "/cvmfs/dune.osgstorage.org/pnfs/fnal.gov/usr/dune/persistent/stash/nusyst_inputs/V00_02/MKInputs/MKOverGENIERSRes_%EGeV.root"
+                    input_hist_pattern: CC_1pip_1p_WQ2_Minoo_RS
+                    param_values: [
+                        1
+                    ]
+                }
+            }
+            Q2_or_q0_is_x: true
+            SuppressAntiNeutrinoBkgSPP: false
+            SuppressNeutrinoBkgSPP: true
+            fill_valid_tree: false
+            use_Q2W_templates: true
+        }
+        tool_type: MKSinglePiTemplate
+    }
+    MiscInteractionSysts_DUNE_TDR_FakeData: {
+        C12ToAr40_2p2hScaling_nu: {
+            centralParamValue: 0
+            paramVariations: [
+                0,
+                1
+            ]
+            prettyName: C12ToAr40_2p2hScaling_nu
+            systParamId: 78
+        }
+        C12ToAr40_2p2hScaling_nubar: {
+            centralParamValue: 0
+            paramVariations: [
+                0,
+                1
+            ]
+            prettyName: C12ToAr40_2p2hScaling_nubar
+            systParamId: 79
+        }
+        SPPLowQ2Suppression: {
+            centralParamValue: 0
+            paramVariations: [
+                1,
+                1,
+                1,
+                0,
+                1,
+                1,
+                1
+            ]
+            prettyName: SPPLowQ2Suppression
+            systParamId: 82
+        }
+        instance_name: DUNE_TDR_FakeData
+        nuenuebar_xsec_ratio: {
+            centralParamValue: 1
+            paramVariations: [
+                0,
+                1
+            ]
+            prettyName: nuenuebar_xsec_ratio
+            systParamId: 80
+        }
+        nuenumu_xsec_ratio: {
+            centralParamValue: 1
+            paramVariations: [
+                0,
+                1
+            ]
+            prettyName: nuenumu_xsec_ratio
+            systParamId: 81
+        }
+        parameter_headers: [
+            C12ToAr40_2p2hScaling_nu,
+            C12ToAr40_2p2hScaling_nubar,
+            nuenuebar_xsec_ratio,
+            nuenumu_xsec_ratio,
+            SPPLowQ2Suppression
+        ]
+        tool_options: {
+            fill_valid_tree: false
+        }
+        tool_type: MiscInteractionSysts
+    }
+    NOvAStyleNonResPionNorm_DUNE_TDR_FakeData: {
+        NR_nu_n_CC_2Pi: {
+            centralParamValue: 0
+            paramVariations: [
+                -2,
+                -1,
+                0,
+                1,
+                2,
+                3
+            ]
+            prettyName: NR_nu_n_CC_2Pi
+            systParamId: 50
+        }
+        NR_nu_n_CC_3Pi: {
+            centralParamValue: 0
+            paramVariations: [
+                -2,
+                -1,
+                0,
+                1,
+                2,
+                3
+            ]
+            prettyName: NR_nu_n_CC_3Pi
+            systParamId: 51
+        }
+        NR_nu_n_NC_1Pi: {
+            centralParamValue: 0
+            paramVariations: [
+                -2,
+                -1,
+                0,
+                1,
+                2,
+                3
+            ]
+            prettyName: NR_nu_n_NC_1Pi
+            systParamId: 55
+        }
+        NR_nu_n_NC_2Pi: {
+            centralParamValue: 0
+            paramVariations: [
+                -2,
+                -1,
+                0,
+                1,
+                2,
+                3
+            ]
+            prettyName: NR_nu_n_NC_2Pi
+            systParamId: 56
+        }
+        NR_nu_n_NC_3Pi: {
+            centralParamValue: 0
+            paramVariations: [
+                -2,
+                -1,
+                0,
+                1,
+                2,
+                3
+            ]
+            prettyName: NR_nu_n_NC_3Pi
+            systParamId: 57
+        }
+        NR_nu_np_CC_1Pi: {
+            centralParamValue: -1.14
+            isSplineable: true
+            paramVariations: [
+                -1.2,
+                -1.18,
+                -1.16,
+                -1.14,
+                -1.12,
+                -1.1,
+                -1.08,
+                 0
+            ]
+            prettyName: NR_nu_np_CC_1Pi
+            systParamId: 54
+        }
+        NR_nu_p_CC_2Pi: {
+            centralParamValue: 0
+            paramVariations: [
+                -2,
+                -1,
+                0,
+                1,
+                2,
+                3
+            ]
+            prettyName: NR_nu_p_CC_2Pi
+            systParamId: 67
+        }
+        NR_nu_p_CC_3Pi: {
+            centralParamValue: 0
+            paramVariations: [
+                -2,
+                -1,
+                0,
+                1,
+                2,
+                3
+            ]
+            prettyName: NR_nu_p_CC_3Pi
+            systParamId: 68
+        }
+        NR_nu_p_NC_1Pi: {
+            centralParamValue: 0
+            paramVariations: [
+                -2,
+                -1,
+                0,
+                1,
+                2,
+                3
+            ]
+            prettyName: NR_nu_p_NC_1Pi
+            systParamId: 58
+        }
+        NR_nu_p_NC_2Pi: {
+            centralParamValue: 0
+            paramVariations: [
+                -2,
+                -1,
+                0,
+                1,
+                2,
+                3
+            ]
+            prettyName: NR_nu_p_NC_2Pi
+            systParamId: 59
+        }
+        NR_nu_p_NC_3Pi: {
+            centralParamValue: 0
+            paramVariations: [
+                -2,
+                -1,
+                0,
+                1,
+                2,
+                3
+            ]
+            prettyName: NR_nu_p_NC_3Pi
+            systParamId: 60
+        }
+        NR_nubar_n_CC_1Pi: {
+            centralParamValue: 0
+            paramVariations: [
+                -2,
+                -1,
+                0,
+                1,
+                2,
+                3
+            ]
+            prettyName: NR_nubar_n_CC_1Pi
+            systParamId: 61
+        }
+        NR_nubar_n_CC_2Pi: {
+            centralParamValue: 0
+            paramVariations: [
+                -2,
+                -1,
+                0,
+                1,
+                2,
+                3
+            ]
+            prettyName: NR_nubar_n_CC_2Pi
+            systParamId: 62
+        }
+        NR_nubar_n_CC_3Pi: {
+            centralParamValue: 0
+            paramVariations: [
+                -2,
+                -1,
+                0,
+                1,
+                2,
+                3
+            ]
+            prettyName: NR_nubar_n_CC_3Pi
+            systParamId: 63
+        }
+        NR_nubar_n_NC_1Pi: {
+            centralParamValue: 0
+            paramVariations: [
+                -2,
+                -1,
+                0,
+                1,
+                2,
+                3
+            ]
+            prettyName: NR_nubar_n_NC_1Pi
+            systParamId: 52
+        }
+        NR_nubar_n_NC_2Pi: {
+            centralParamValue: 0
+            paramVariations: [
+                -2,
+                -1,
+                0,
+                1,
+                2,
+                3
+            ]
+            prettyName: NR_nubar_n_NC_2Pi
+            systParamId: 53
+        }
+        NR_nubar_n_NC_3Pi: {
+            centralParamValue: 0
+            paramVariations: [
+                -2,
+                -1,
+                0,
+                1,
+                2,
+                3
+            ]
+            prettyName: NR_nubar_n_NC_3Pi
+            systParamId: 69
+        }
+        NR_nubar_p_CC_1Pi: {
+            centralParamValue: 0
+            paramVariations: [
+                -2,
+                -1,
+                0,
+                1,
+                2,
+                3
+            ]
+            prettyName: NR_nubar_p_CC_1Pi
+            systParamId: 64
+        }
+        NR_nubar_p_CC_2Pi: {
+            centralParamValue: 0
+            paramVariations: [
+                -2,
+                -1,
+                0,
+                1,
+                2,
+                3
+            ]
+            prettyName: NR_nubar_p_CC_2Pi
+            systParamId: 65
+        }
+        NR_nubar_p_CC_3Pi: {
+            centralParamValue: 0
+            paramVariations: [
+                -2,
+                -1,
+                0,
+                1,
+                2,
+                3
+            ]
+            prettyName: NR_nubar_p_CC_3Pi
+            systParamId: 66
+        }
+        NR_nubar_p_NC_1Pi: {
+            centralParamValue: 0
+            paramVariations: [
+                -2,
+                -1,
+                0,
+                1,
+                2,
+                3
+            ]
+            prettyName: NR_nubar_p_NC_1Pi
+            systParamId: 70
+        }
+        NR_nubar_p_NC_2Pi: {
+            centralParamValue: 0
+            paramVariations: [
+                -2,
+                -1,
+                0,
+                1,
+                2,
+                3
+            ]
+            prettyName: NR_nubar_p_NC_2Pi
+            systParamId: 71
+        }
+        NR_nubar_p_NC_3Pi: {
+            centralParamValue: 0
+            paramVariations: [
+                -2,
+                -1,
+                0,
+                1,
+                2,
+                3
+            ]
+            prettyName: NR_nubar_p_NC_3Pi
+            systParamId: 72
+        }
+        instance_name: DUNE_TDR_FakeData
+        parameter_headers: [
+            NR_nu_n_CC_2Pi,
+            NR_nu_n_CC_3Pi,
+            NR_nu_p_CC_2Pi,
+            NR_nu_p_CC_3Pi,
+            NR_nu_np_CC_1Pi,
+            NR_nu_n_NC_1Pi,
+            NR_nu_n_NC_2Pi,
+            NR_nu_n_NC_3Pi,
+            NR_nu_p_NC_1Pi,
+            NR_nu_p_NC_2Pi,
+            NR_nu_p_NC_3Pi,
+            NR_nubar_n_CC_1Pi,
+            NR_nubar_n_CC_2Pi,
+            NR_nubar_n_CC_3Pi,
+            NR_nubar_p_CC_1Pi,
+            NR_nubar_p_CC_2Pi,
+            NR_nubar_p_CC_3Pi,
+            NR_nubar_n_NC_1Pi,
+            NR_nubar_n_NC_2Pi,
+            NR_nubar_n_NC_3Pi,
+            NR_nubar_p_NC_1Pi,
+            NR_nubar_p_NC_2Pi,
+            NR_nubar_p_NC_3Pi
+        ]
+        tool_options: {
+            HighWResponse: 0.05
+            OneSigmaResponse: 0.5
+            WBegin: 0
+            WEnd: 5
+            WTransition: 3
+            fill_valid_tree: false
+        }
+        tool_type: NOvAStyleNonResPionNorm
+    }
+    syst_providers: [
+        GENIEReWeight_DUNE_v2,
+        MINERvAq0q3Weighting_DUNE_TDR_FakeData,
+        MKSinglePiTemplate_DUNE_TDR_FakeData,
+        MINERvAE2p2h_DUNE_TDR_FakeData,
+        NOvAStyleNonResPionNorm_DUNE_TDR_FakeData,
+        BeRPAWeight_DUNE_TDR_FakeData,
+        EbLepMomShift_DUNE_TDR_FakeData,
+        MiscInteractionSysts_DUNE_TDR_FakeData,
+        FSILikeEAvailSmearing_DUNE_TDR_FakeData,
+        zexpansion_weighter_toolconfig
+    ]
+}

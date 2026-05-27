@@ -1,0 +1,119 @@
+╔════════════════════════════════════════════════════════════════════════╗
+║           YAML Export for Oscillation Fitter - Quick Reference         ║
+╚════════════════════════════════════════════════════════════════════════╝
+
+┌─ BASIC USAGE ──────────────────────────────────────────────────────────┐
+│                                                                         │
+│  from systs import SystConfig                                          │
+│                                                                         │
+│  # Load configuration                                                  │
+│  config = SystConfig('systs.fcl')                                      │
+│                                                                         │
+│  # Export all systematics                                              │
+│  config.to_oscillation_yaml(output_file='oscillation.yaml')           │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+
+┌─ FILTER SPECIFIC SYSTEMATICS ──────────────────────────────────────────┐
+│                                                                         │
+│  from systs import create_oscillation_yaml_from_systematics            │
+│                                                                         │
+│  all_systs = config.get_all_systs()                                    │
+│                                                                         │
+│  # Filter by name                                                      │
+│  mec_systs = [s for s in all_systs if 'MEC' in s.name]                │
+│  create_oscillation_yaml_from_systematics(                             │
+│      mec_systs,                                                         │
+│      output_file='mec.yaml'                                            │
+│  )                                                                      │
+│                                                                         │
+│  # Filter by type                                                      │
+│  corrections = [s for s in all_systs if s.isCorrection]               │
+│  systematics = [s for s in all_systs if not s.isCorrection]           │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+
+┌─ CUSTOMIZE PARAMETERS ─────────────────────────────────────────────────┐
+│                                                                         │
+│  config.to_oscillation_yaml(                                           │
+│      output_file='custom.yaml',                                        │
+│      sample_names=['ND_*', 'FD_*'],     # Sample patterns             │
+│      error=0.5,                          # Error value                 │
+│      flat_prior=True,                    # Use flat prior              │
+│      param_bounds=[-3.0, 3.0],          # Parameter bounds            │
+│      generated_value=0.0,                # Generated value             │
+│      prefit_value=0.0,                   # Pre-fit value              │
+│      spline_mode=[0],                    # Spline mode                │
+│      spline_type='PerEvent',            # Spline type                 │
+│      mcmc_step_scale=0.2,               # MCMC step                   │
+│      syst_type='Spline',                # Systematic type             │
+│      param_group='Xsec'                  # Parameter group            │
+│  )                                                                      │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+
+┌─ COMMON WORKFLOWS ─────────────────────────────────────────────────────┐
+│                                                                         │
+│  # 1. Export all systematics with defaults                            │
+│  config.to_oscillation_yaml('all_systs.yaml')                         │
+│                                                                         │
+│  # 2. Export cross-section systematics                                │
+│  xsec = [s for s in config.get_all_systs() if 'xsec' in s.name.lower()]│
+│  create_oscillation_yaml_from_systematics(xsec, 'xsec.yaml')          │
+│                                                                         │
+│  # 3. Export with custom bounds per group                             │
+│  for group in ['Flux', 'Xsec', 'Detector']:                           │
+│      systs = [s for s in all_systs if group.lower() in s.name.lower()]│
+│      create_oscillation_yaml_from_systematics(                         │
+│          systs,                                                         │
+│          output_file=f'{group.lower()}.yaml',                         │
+│          param_group=group                                             │
+│      )                                                                  │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+
+┌─ OUTPUT STRUCTURE ─────────────────────────────────────────────────────┐
+│                                                                         │
+│  - Systematic:                                                         │
+│      SampleNames: ["ND_*", "FD_*", "ATM"]                             │
+│      Error: 1.0                                                        │
+│      FlatPrior: false                                                  │
+│      Names:                                                            │
+│        FancyName: systematic_name                                      │
+│        ParameterName: systematic_name                                  │
+│      ParameterBounds: [-9999.0, 9999.0]                               │
+│      ParameterValues:                                                  │
+│        Generated: 0.0                                                  │
+│        PreFitValue: 0.0                                                │
+│      SplineInformation:                                                │
+│        Mode: [0]                                                       │
+│        SplineName: systematic_name                                     │
+│        Type: PerEvent                                                  │
+│      StepScale:                                                        │
+│        MCMC: 0.4                                                       │
+│      Type: Spline                                                      │
+│      ParameterGroup: Xsec                                              │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+
+┌─ TIPS & TRICKS ────────────────────────────────────────────────────────┐
+│                                                                         │
+│  • Corrections automatically use syst.cv for Generated/PreFitValue    │
+│  • Use list comprehension for powerful filtering                      │
+│  • Can return YAML string without saving (omit output_file)           │
+│  • All parameters have sensible defaults                              │
+│  • Parameter groups help organize systematics in fitter               │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+
+┌─ FILES REFERENCE ──────────────────────────────────────────────────────┐
+│                                                                         │
+│  systs.py                  - Main implementation                       │
+│  test_yaml_export.py       - Complete test examples                   │
+│  example_yaml_simple.py    - Minimal standalone example               │
+│  YAML_EXPORT_GUIDE.md      - Full documentation                       │
+│  IMPLEMENTATION_SUMMARY.md - Technical details                        │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
+
+Requirements: pip install pyyaml
