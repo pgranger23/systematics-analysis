@@ -191,39 +191,63 @@ class CAFManager:
             return ak.where(ak.num(data) == 0, ak.Array([[-999]] * len(data)), data)
 
         with uproot.open(fname) as f:
+            # 1. Read weights tree (this remains fast)
             weights = f['weights'].arrays(library='pd')
-            weights['nuPDG'] = ak.flatten(f['cafTree/rec/mc/mc.nu.pdg'].array())
-            weights['Ev'] = ak.flatten(f['cafTree/rec/mc/mc.nu.E'].array())
-            # weights['isCC'] = ak.flatten(f['cafTree/rec/mc/mc.nu.iscc'].array())
-            weights['NuMomY'] = ak.flatten(f['cafTree/rec/mc/mc.nu.momentum.y'].array())
-            weights['mode'] = ak.flatten(f['cafTree/rec/mc/mc.nu.mode'].array())
+            
+            # 2. Define all branches needed from 'cafTree' to batch-read them
+            caf_branches = [
+                'rec/mc/mc.nu.pdg',
+                'rec/mc/mc.nu.E',
+                'rec/mc/mc.nu.momentum.y',
+                'rec/mc/mc.nu.mode',
+                'rec/common/common.ixn.pandora/common.ixn.pandora.Enu.lep_calo',
+                'rec/common/common.ixn.pandora/common.ixn.pandora.Enu.e_calo',
+                'rec/common/common.ixn.pandora/common.ixn.pandora.Enu.mu_had',
+                'rec/common/common.ixn.pandora/common.ixn.pandora.Enu.e_had',
+                'rec/common/common.ixn.pandora/common.ixn.pandora.dir.lngtrk.y',
+                'rec/common/common.ixn.pandora/common.ixn.pandora.dir.heshw.y',
+                'rec/common/common.ixn.pandora/common.ixn.pandora.nuhyp.cvn.nue',
+                'rec/common/common.ixn.pandora/common.ixn.pandora.nuhyp.cvn.numu',
+                'rec/common/common.ixn.pandora/common.ixn.pandora.nuhyp.cvn.nc',
+                'rec/fd/fd.hd.pandora/fd.hd.pandora.npfps'
+            ]
+            
+            # Batch read all branches in a single efficient pass into an Awkward structure
+            caf_data = f['cafTree'].arrays(caf_branches, library='ak')
 
-            recoE_numu = fix_empty_arrays(f['cafTree/rec/common/common.ixn.pandora/common.ixn.pandora.Enu.lep_calo'].array())
-            recoE_nue = fix_empty_arrays(f['cafTree/rec/common/common.ixn.pandora/common.ixn.pandora.Enu.e_calo'].array())
-            recoEhad_numu = fix_empty_arrays(f['cafTree/rec/common/common.ixn.pandora/common.ixn.pandora.Enu.mu_had'].array())
-            recoEhad_nue = fix_empty_arrays(f['cafTree/rec/common/common.ixn.pandora/common.ixn.pandora.Enu.e_had'].array())
+            # 3. Extract and map columns from the loaded batch memory structure
+            weights['nuPDG'] = ak.flatten(caf_data['rec/mc/mc.nu.pdg'])
+            weights['Ev'] = ak.flatten(caf_data['rec/mc/mc.nu.E'])
+            weights['NuMomY'] = ak.flatten(caf_data['rec/mc/mc.nu.momentum.y'])
+            weights['mode'] = ak.flatten(caf_data['rec/mc/mc.nu.mode'])
+
+            recoE_numu = fix_empty_arrays(caf_data['rec/common/common.ixn.pandora/common.ixn.pandora.Enu.lep_calo'])
+            recoE_nue = fix_empty_arrays(caf_data['rec/common/common.ixn.pandora/common.ixn.pandora.Enu.e_calo'])
+            recoEhad_numu = fix_empty_arrays(caf_data['rec/common/common.ixn.pandora/common.ixn.pandora.Enu.mu_had'])
+            recoEhad_nue = fix_empty_arrays(caf_data['rec/common/common.ixn.pandora/common.ixn.pandora.Enu.e_had'])
+            
             weights['recoE_numu'] = ak.flatten(recoE_numu)
             weights['recoE_nue'] = ak.flatten(recoE_nue)
             weights['recoEhad_numu'] = ak.flatten(recoEhad_numu)
             weights['recoEhad_nue'] = ak.flatten(recoEhad_nue)
 
+            direc_numu = fix_empty_arrays(caf_data['rec/common/common.ixn.pandora/common.ixn.pandora.dir.lngtrk.y'])
+            direc_nue = fix_empty_arrays(caf_data['rec/common/common.ixn.pandora/common.ixn.pandora.dir.heshw.y'])
+            direc_nc = fix_empty_arrays(caf_data['rec/common/common.ixn.pandora/common.ixn.pandora.dir.heshw.y'])
+            
+            weights['direc_numu'] = -ak.flatten(direc_numu)
+            weights['direc_nue'] = -ak.flatten(direc_nue)
+            weights['direc_nc'] = -ak.flatten(direc_nc)
 
-            direc_numu = fix_empty_arrays(f['cafTree/rec/common/common.ixn.pandora/common.ixn.pandora.dir.lngtrk.y'].array())
-            direc_nue = fix_empty_arrays(f['cafTree/rec/common/common.ixn.pandora/common.ixn.pandora.dir.heshw.y'].array())
-            direc_nc = fix_empty_arrays(f['cafTree/rec/common/common.ixn.pandora/common.ixn.pandora.dir.heshw.y'].array())
-            weights['direc_numu'] = -ak.flatten(direc_numu) #Minus sign to have the convention negative=upgoing neutrinos
-            weights['direc_nue'] = -ak.flatten(direc_nue) #Minus sign to have the convention negative=upgoing neutrinos
-            weights['direc_nc'] = -ak.flatten(direc_nc) #Minus sign to have the convention negative=upgoing neutrinos
-
-            cvn_nue = fix_empty_arrays(f['cafTree/rec/common/common.ixn.pandora/common.ixn.pandora.nuhyp.cvn.nue'].array())
-            cvn_numu = fix_empty_arrays(f['cafTree/rec/common/common.ixn.pandora/common.ixn.pandora.nuhyp.cvn.numu'].array())
-            cvn_nc = fix_empty_arrays(f['cafTree/rec/common/common.ixn.pandora/common.ixn.pandora.nuhyp.cvn.nc'].array())
+            cvn_nue = fix_empty_arrays(caf_data['rec/common/common.ixn.pandora/common.ixn.pandora.nuhyp.cvn.nue'])
+            cvn_numu = fix_empty_arrays(caf_data['rec/common/common.ixn.pandora/common.ixn.pandora.nuhyp.cvn.numu'])
+            cvn_nc = fix_empty_arrays(caf_data['rec/common/common.ixn.pandora/common.ixn.pandora.nuhyp.cvn.nc'])
 
             weights['cvn_numu'] = ak.flatten(cvn_numu)
             weights['cvn_nue'] = ak.flatten(cvn_nue)
             weights['cvn_nc'] = ak.flatten(cvn_nc)
 
-            weights['npfps'] = ak.flatten(fix_empty_arrays(f['cafTree/rec/fd/fd.hd.pandora/fd.hd.pandora.npfps'].array()))
+            weights['npfps'] = ak.flatten(fix_empty_arrays(caf_data['rec/fd/fd.hd.pandora/fd.hd.pandora.npfps']))
         weights['direc_true'] = -weights['NuMomY']/weights['Ev'] #Minus sign to have the convention negative=upgoing neutrinos
         weights['nue_w'] *= weights["xsec"]
         weights['numu_w'] *= weights["xsec"]
